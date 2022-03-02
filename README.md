@@ -107,11 +107,11 @@ Available field is not required. It is set false by defualt.
 **HTTP Methods available:**
 - Get - get one flavour by its id;
 - Put - update a flavour by its id. You need to put in body request the fields you want to update. Example:
-´´´
+```
 {
 	"name": "teste"
 }
-´´´
+```
 - Delete - delete a flavour passing its id.
 
 ### Files
