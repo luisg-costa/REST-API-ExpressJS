@@ -62,20 +62,65 @@ To test this API, i recommend that you install [Postman](https://www.postman.com
 {
 	"name": "your name",
 	"password": "12345678",
-	"email": "your_email@teste.com"
+	"email": "your_email@test.com"
 }
 ```
 - Put - edit a user (already logged in) account. You need to send json body in your request. You can send just name, password or email. You can send all of that in json body.
 - Delete - delete a user logged in;
 
 
-### Token Resource
+### Token
 ```
 {your_url}/token
 ```
 **HTTP Methods available:**
-- Post
+- Post - you need to send your email and password to obtain an valid token which you must use in your request headers. Body request example:
+```
+{
+	"email": "test@test.pt",
+	"password":"12345678"
+}
+```
 
+### Flavours
+```
+{your_url}/flavours
+```
+**HTTP Methods available:**
+- Get - get all flavours;
+- Post - create a new flavour. Example of body request:
+```
+{
+	"name":"test",
+	"ingredients":"test",
+	"description":"test",
+	"format":"test",
+	"suggestions":"test",
+  "available": true
+}
+```
+Available field is not required. It is set false by defualt.
+
+```
+{your_url}/flavours/:id
+```
+**HTTP Methods available:**
+- Get - get one flavour by its id;
+- Put - update a flavour by its id. You need to put in body request the fields you want to update. Example:
+´´´
+{
+	"name": "teste"
+}
+´´´
+- Delete - delete a flavour passing its id.
+
+### Files
+```
+{your_url}/files
+```
+**HTTP Methods available:**
+- Post - upload a photo. To upload this photo you need a multipart form. Example in Insomnia:
+![image](https://user-images.githubusercontent.com/99747197/156385360-8a6bb159-ce83-4e41-b631-d973e3f43820.png)
 
 
 ## Contact
